@@ -1,18 +1,14 @@
-import { useEffect, useState } from "react";
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import DashboardPage from './pages/DashboardPage';
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    fetch('http://localhost:8080/api/hello')
-    .then(res => res.json())
-    .then(data => setMessage(data.message))
-    .catch(err => console.error(err));
-  },[]);
   return (
-    <div>
-      {message}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<DashboardPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
