@@ -9,9 +9,11 @@ export default function LoginPage() {
         try {
             const res = await axios.post('/auth/login', { id, pw });
             localStorage.setItem('token', res.data.token);
-            localStorage.setItem('username', res.data.username);  // ✅ 이름 저장
-            localStorage.setItem('userId', res.data.userId);      // ✅ 아이디 저장
-            localStorage.setItem('role', res.data.role);          // ✅ 권한 저장
+            localStorage.setItem('user', JSON.stringify({
+                username: res.data.username,
+                userId: res.data.userId,
+                role: res.data.role,
+            }));
             window.location.href = '/';
         } catch (err) {
             alert('로그인 실패');

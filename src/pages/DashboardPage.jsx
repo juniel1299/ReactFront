@@ -1,10 +1,16 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function DashboardPage() {
-    const username = localStorage.getItem('username');
-    const userId = localStorage.getItem('userId');
-    const role = localStorage.getItem('role');
     const navigate = useNavigate();
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const savedUser = JSON.parse(localStorage.getItem("user"));
+        if (savedUser) {
+            setUser(savedUser);
+        }
+    }, []);
 
     const handleLogout = () => {
         localStorage.clear();
@@ -23,8 +29,19 @@ export default function DashboardPage() {
             </div>
 
             <div className="mb-4 p-4 border rounded shadow bg-gray-50">
-                <p className="text-lg font-semibold">👋 {username || 'Guest'}님 환영합니다!</p>
-                <p className="text-sm text-gray-600">아이디: {userId || '미로그인'} / 역할: {role || '미로그인'}</p>
+                <p className="text-lg font-semibold">👋 {user?.username || 'Guest'}님 환영합니다!</p>
+                <p className="text-sm text-gray-600">아이디: {user?.userId || '미로그인'} / 역할: {user?.role || '미로그인'}</p>
+            </div>
+
+            <div className="p-4">
+                {user?.role === 'ROLE_ADMIN' && (
+                    <button
+                        onClick={() => navigate("/admin/accountPage")}
+                        className="px-4 py-2 bg-gray-800 text-white rounded"
+                    >
+                        관리자 화면
+                    </button>
+                )}
             </div>
         </div>
     );
