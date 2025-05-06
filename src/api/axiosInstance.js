@@ -8,6 +8,7 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
+    console.log("📦 인터셉터 토큰", token); // <- 여기에 로그
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
