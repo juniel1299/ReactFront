@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { AgGridReact } from "ag-grid-react";
-import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-alpine.css";
 import { useNavigate } from "react-router-dom";
 import axios from "../api/axiosInstance";
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-alpine.css";
 
 const AccountPage = () => {
   const gridRef = useRef(null);

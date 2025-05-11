@@ -25,6 +25,7 @@ export default function DashboardPage() {
                     <button onClick={() => navigate('/login')} className="px-4 py-2 bg-blue-500 text-white rounded">로그인</button>
                     <button onClick={handleLogout} className="px-4 py-2 bg-gray-500 text-white rounded">로그아웃</button>
                     <button onClick={() => navigate('/register')} className="px-4 py-2 bg-green-500 text-white rounded">회원가입</button>
+                    <button onClick={() => navigate('/admin/AuthorityUserMappingPage')} className="px-4 py-2 bg-green-500 text-white rounded">회원가입</button>
                 </div>
             </div>
 
