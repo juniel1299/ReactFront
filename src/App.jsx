@@ -6,6 +6,7 @@ import AccountPage from './pages/AccountPage';
 import AuthorityUserMappingPage from './pages/AuthorityUserMappingPage';
 import ShadowHook from './pages/ShadowHook';
 import QuillTest from './pages/QuillTest';
+import EchartTest from './pages/echartTest';
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/admin/AuthorityUserMappingPage" element={<AuthorityUserMappingPage />} />
         <Route path="/admin/ShadowHook" element={<ShadowHook />} />
         <Route path="/admin/QuillTest" element={<QuillTest />} />
+        <Route path="/admin/EchartTest" element={<EchartTest />} />
       </Routes>
     </BrowserRouter>
   )

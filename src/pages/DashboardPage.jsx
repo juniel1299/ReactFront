@@ -28,6 +28,7 @@ export default function DashboardPage() {
                     <button onClick={() => navigate('/admin/AuthorityUserMappingPage')} className="px-4 py-2 bg-green-500 text-white rounded">회원가입</button>
                     <button onClick={() => navigate('/admin/ShadowHook')} className="px-4 py-2 bg-green-500 text-white rounded">쉐도우훅</button>
                     <button onClick={() => navigate('/admin/QuillTest')} className="px-4 py-2 bg-green-500 text-white rounded">quill Test</button>
+                    <button onClick={() => navigate('/admin/EchartTest')} className="px-4 py-2 bg-green-500 text-white rounded">Echart Test</button>
                 </div>
             </div>
 
